@@ -1,0 +1,174 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navigation li {
+    height: 100%;
+    width: 10%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.navigation li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+.navigation li a:hover {
+    background-color: #111;
+}
+
+.menuicone {
+    display: none;
+}
+
+/* Table Séries */
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    background-color: #F2D5E3;
+}
+
+th, td, caption {
+    font-weight: normal;
+    text-align: center;
+    padding: 8px;
+}
+
+caption{
+    background-color: #D9A0AF;
+    color: black;  
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+th {
+    color: black;
+    background-color: #F2D5E3;
+}
+input[type=submit]{
+    width: 100%;
+}
+
+/* formulaire */
+
+input[type=text], input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width: 70%;
+}
+
+input[type=submit]:hover {
+    background-color: #333;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .navigation li:not(:first-child) {
+    display: none;
+    }
+    .navigation li:first-child {
+    width: 100%;
+    }
+    .menuicone {
+    display: block;
+    position: absolute;
+    right: 0;
+    top : 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navigation.responsive {
+        height: auto;
+        flex-direction: column;
+    }
+    .navigation.responsive li {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
