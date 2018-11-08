@@ -31,7 +31,7 @@
                         <label for="DatePublication">Acteur</label>
                 </div>
                 <div class="col-75">
-                    <select name="actors">
+                    <select multiple name="actors[]">
                         @foreach ($actors as $actor)
                             <option value="{{ $actor->id }}">
                                 {{ $actor->completeName() }}
@@ -45,7 +45,7 @@
                         <label for="DatePublication">Genre</label>
                 </div>
                 <div class="col-75">
-                    <select name="genres">
+                    <select multiple name="genres[]">
                         @foreach ($genres as $genre)
                             <option value="{{ $genre->id }}">
                                 {{ $genre->name }}

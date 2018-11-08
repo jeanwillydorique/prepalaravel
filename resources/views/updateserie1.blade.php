@@ -31,13 +31,17 @@
                             <label for="DatePublication">Acteur</label>
                     </div>
                     <div class="col-75">
-                        <select name="actors">
+                        <select multiple name="actors[]">
                             @foreach ($actors as $actor)
-                                @if ( @isset($series->actors[0]->id) && $actor->id == $series->actors[0]->id )
-                                    <option selected value="{{ $actor->id }}"> {{ $actor->completeName() }}</option>
-                                @else
-                                    <option value="{{ $actor->id }}"> {{ $actor->completeName() }}</option>
-                                @endif
+
+                            <option 
+                                    @foreach ($series->actors as $seriesactoritem)
+                                        @if ( $actor->id == $seriesactoritem->id )
+                                        selected 
+                                        @endif
+                                    @endforeach
+                            value="{{ $actor->id }}"> {{ $actor->completeName() }}</option>   
+
                             @endforeach
                         </select>
                     </div>
@@ -47,13 +51,15 @@
                             <label for="DatePublication">Genre</label>
                     </div>
                     <div class="col-75">
-                        <select name="genres">
+                        <select multiple name="genres[]">
                             @foreach ($genres as $genre)
-                                @if ( @isset($series->genres[0]->id) && $genre->id == $series->genres[0]->id )
-                                <option selected value="{{ $genre->id }}"> {{ $genre->name }}</option>
-                                @else
-                                <option value="{{ $genre->id }}"> {{ $genre->name }}</option>
-                                @endif
+                            <option 
+                                    @foreach ($series->genres as $seriesgenreitem)
+                                        @if ( $genre->id == $seriesgenreitem->id )
+                                        selected 
+                                        @endif
+                                    @endforeach
+                            value="{{ $genre->id }}"> {{ $genre->name }}</option> 
                             @endforeach
                         </select>
                     </div>

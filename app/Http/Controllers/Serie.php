@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class Serie extends Controller
 {
     public function insertOne(Request $request)
-    {
-                    
+    {           
                 $serie = new \App\Serie;
 
                 $serie->title = $request->title;
